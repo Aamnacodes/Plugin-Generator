@@ -1,14 +1,21 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-         Hello
-        
-      </header>
+    <div>
+    <BrowserRouter>
+      {/* <UserProvider> */}
+      <Navbar/>
+        <Routes>
+          <Route element={ <Home/>} path='/'/>
+          {/* <Route element={ <Login/>} path='/login'/> */}
+          {/* <Route element={ <Signup/>} path='/signup'/> */}
+        </Routes>
+      {/* </UserProvider> */}
+    </BrowserRouter>
     </div>
   );
 }

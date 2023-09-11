@@ -1,7 +1,14 @@
-.App {
-  text-align: center;
+.nav-item .active{
+  font-weight: bold;
+  border-bottom: 2px solid #EEEEEE;
+  color: #EEEEEE !important;
 }
-
+.nav-item:hover{
+  transform: scale(1.1);
+}
+button:hover{
+  transform: scale(1.1);
+}
 
 
 
