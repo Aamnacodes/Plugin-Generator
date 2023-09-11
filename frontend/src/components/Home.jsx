@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import VanillaTilt from 'vanilla-tilt';
 import Navbar from './Navbar'
 import { color } from 'framer-motion'
 
@@ -18,33 +19,33 @@ const Home = () => {
       <div className='text-center' style={{padding:'80px',backgroundColor: '#64CCC5', fontFamily:'Roboto Slab, serif'}}>
       <p className='fw-bold px-5' style={{color: '#053B50', fontSize:'1.5em'}}>Select the perfect template for your newsletter from our selection of three distinct designs, each crafted to complement your content and preferences.</p>
       <div className='row mt-5'>
-        <div className='col-md-4'>
+      <div className="col-md-4" data-tilt data-tilt-scale="1.1">
           <div className='card' style={{width:'18rem'}}>
             <img src='https://eep.io/images/yzco4xsimv0y/2JmLe4nexVhHNLNQaX9R84/3575d029428669854b5e806b30869e99/Paid_Lander_Newsletters_Hero-min.png?w=1520&fm=avif&q=60' className='card-img-top' alt='img'/>
             <div className='card-body' style={{backgroundColor: '#053B50', paddingLeft:'50px', paddingRight: '50px'}}>
               <p className='card-title fst-italic text-light display-6'>Modern Minimalist</p>
               <p className='card-text text-light my-4'>Choose this template for a clean and sleek design that lets your content shine.</p>
-              <a href='#' className='btn w-100 fw-bold mb-3' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
+              <a href='#' className='btn w-100 fw-bold mb-3 button' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
             </div>
           </div>
         </div>
-        <div className='col-md-4'>
+        <div className='col-md-4' data-tilt data-tilt-glare data-tilt-max-glare="0.8">
           <div className='card' style={{width:'18rem'}}>
             <img src='https://eep.io/images/yzco4xsimv0y/2JmLe4nexVhHNLNQaX9R84/3575d029428669854b5e806b30869e99/Paid_Lander_Newsletters_Hero-min.png?w=1520&fm=avif&q=60' className='card-img-top' alt='img'/>
             <div className='card-body' style={{backgroundColor: '#053B50', paddingLeft:'50px', paddingRight: '50px'}}>
               <p className='card-title fst-italic text-light display-6'>Modern Minimalist</p>
               <p className='card-text text-light my-4'>Choose this template for a clean and sleek design that lets your content shine.</p>
-              <a href='#' className='btn w-100 fw-bold mb-3' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
+              <a href='#' className='btn w-100 fw-bold mb-3 button' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
             </div>
           </div>
         </div>
-        <div className='col-md-4'>
+        <div className='col-md-4' data-tilt data-tilt-glare data-tilt-max-glare="0.8">
           <div className='card' style={{width:'18rem'}}>
             <img src='https://eep.io/images/yzco4xsimv0y/2JmLe4nexVhHNLNQaX9R84/3575d029428669854b5e806b30869e99/Paid_Lander_Newsletters_Hero-min.png?w=1520&fm=avif&q=60' className='card-img-top' alt='img'/>
             <div className='card-body' style={{backgroundColor: '#053B50', paddingLeft:'50px', paddingRight: '50px'}}>
               <p className='card-title fst-italic text-light display-6'>Modern Minimalist</p>
               <p className='card-text text-light my-4'>Choose this template for a clean and sleek design that lets your content shine.</p>
-              <a href='#' className='btn w-100 fw-bold mb-3' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
+              <a href='#' className='btn w-100 fw-bold mb-3 button' style={{backgroundColor: '#176B87', color:'#EEEEEE'}}>Select</a>
             </div>
           </div>
         </div>
