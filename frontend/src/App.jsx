@@ -3,12 +3,22 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-         Hello
-        
-      </header>
+    <div>
+      <BrowserRouter>
+      <UserProvider>
+          
+
+
+          
+
+          <Routes>
+          <Route element={ <Login /> } path='login' />
+          <Route element={ <Signup /> } path='signup' />
+            </Routes>  
+            
+        </UserProvider>
+      </BrowserRouter>
+
     </div>
   );
 }
