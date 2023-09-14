@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "styled-components": "^6.0.8",
     "vanilla-tilt": "^1.8.1"
   }
 }
