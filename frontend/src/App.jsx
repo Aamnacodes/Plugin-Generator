@@ -7,7 +7,7 @@ import Login from './components/Login';
 
 import { NewsLetter } from './components/NewsLetter';
 
-function App() {
+const App = () => {
   return (
     <div>
     <BrowserRouter>
