@@ -4,14 +4,14 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
-
-import { NewsLetter } from './components/NewsLetter';
+import { UserProvider } from './UserContext';
+import  NewsLetter  from './components/NewsLetter';
 
 const App = () => {
   return (
     <div>
     <BrowserRouter>
-      {/* <UserProvider> */}
+      <UserProvider>
       <Navbar/>
         <Routes>
           <Route element={ <Home/>} path='/'/>
@@ -21,7 +21,7 @@ const App = () => {
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
         </Routes>
-      {/* </UserProvider> */}
+      </UserProvider>
     </BrowserRouter>
     </div>
   );
