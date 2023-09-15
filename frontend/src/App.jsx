@@ -2,10 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import { UserProvider } from './UserContext';
-import  NewsLetter  from './components/NewsLetter';
 
 function App() {
   return (
@@ -14,10 +10,10 @@ function App() {
       <UserProvider>
       <Navbar/>
         <Routes>
-          <Route element={ <Home/>} path='home'/>
+          <Route element={ <Home/>} path='/'/>
           <Route element={ <Signup/>} path='signup'/>
           <Route element={ <Login/>} path='login'/>
-          <Route element={ <NewsLetter/>} path='newsletter'/>
+          <Route element={ <NewsLetter/>} path='news'/>
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
         </Routes>
