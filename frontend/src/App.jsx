@@ -14,10 +14,10 @@ function App() {
       <UserProvider>
       <Navbar/>
         <Routes>
-          <Route element={ <Home/>} path='/'/>
+          <Route element={ <Home/>} path='home'/>
           <Route element={ <Signup/>} path='signup'/>
           <Route element={ <Login/>} path='login'/>
-          <Route element={ <NewsLetter/>} path='news'/>
+          <Route element={ <NewsLetter/>} path='newsletter'/>
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
         </Routes>
