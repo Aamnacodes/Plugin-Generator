@@ -4,7 +4,7 @@ const myschema = new Schema({
     name : String,
     email : String,
     owner : String,
-    createdAt: Date
+    createdAt: Date 
 });
 
 module.exports = model( 'subscribers', myschema );

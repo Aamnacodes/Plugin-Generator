@@ -83,17 +83,7 @@ const NewsLetter =() =>{
                     Email address
                   </label>
                 </div>
-                {/* Password input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="password"
-                    id="form3Example4"
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example4">
-                    Password
-                  </label>
-                </div>
+                
                 {/* Checkbox */}
                 <div className="form-check d-flex justify-content-center mb-4">
                   <input
@@ -110,15 +100,15 @@ const NewsLetter =() =>{
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="btn btn-primary btn-block mb-4"
+                  className="btn btn-primary btn-block mb-4 w-100"
                 >
-                  Sign up
+                  Subscribe
                 </button>
                 {/* Register buttons */}
                 <div className="text-center">
                   <p>or sign up with:</p>
                   <button
-                    type="button"
+                    type="button" 
                     className="btn btn-link btn-floating mx-1"
                   >
                     <i className="fab fa-facebook-f" />

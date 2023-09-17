@@ -78,7 +78,7 @@ const Login = () => {
             exit={{ opacity: 0, x: '-100%' }}
             transition={{ duration: 0.3, type: 'spring', stiffness: 50, damping: 10 }}>
 
-            <div className="w-25">
+            <div className="w-25" style={{marginTop:'60px'}}>
                 <div className="card" style={{ backgroundColor: '#FCFAE4', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', border: '1px solid black' }}>
                     <div className="card-body">
                         <h3 className="text-center">Login Form</h3>

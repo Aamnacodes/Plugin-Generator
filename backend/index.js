@@ -4,7 +4,7 @@ const express = require('express');
 //importing routers
 const userRouter = require('./routers/userRouter');
 const utilRouter = require('./routers/util');
-
+const subscriberRouter = require ('./routers/subscribeRouter');
 const cors = require('cors');
 
 
@@ -21,9 +21,11 @@ app.use(cors({
     origin: [ 'http://localhost:3000']
 }));
 
-app.use('/subscribers', userRouter);
+app.use('/user', userRouter);
 
 app.use('/util',utilRouter);
+
+app.use('/subscriber',subscriberRouter);
 
 app.use(express.static('./uploads'));
 
