@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { Link,NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
-
-
+     
+     
    return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div className="container-fluid">
-    <a className="navbar-brand fw-bold" href="#" style={{color:'#284e7d'}}>
+    <a className="navbar-brand" href="#">
       MailMagnet
     </a>
     <button
@@ -39,11 +39,11 @@ const Navbar = () => {
             Login
           </NavLink>
         </li>
-
-
-
+       
+        
+   
         <li className="nav-item">
-          <NavLink className="nav-link" to="/news">
+          <NavLink className="nav-link" to="/newsletter">
             Newsletter
           </NavLink>
        </li>
@@ -59,9 +59,10 @@ const Navbar = () => {
           Search
         </button>
       </form> */}
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
-</nav>
 
   )
 }
