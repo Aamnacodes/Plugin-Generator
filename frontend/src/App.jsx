@@ -2,10 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import { UserProvider } from './UserContext';
-import  NewsLetter  from './components/NewsLetter';
 
 const App = () => {
   return (
