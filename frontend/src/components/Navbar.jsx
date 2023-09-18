@@ -6,9 +6,9 @@ const Navbar = () => {
      
      
    return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor:'#053B50'}}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">
+    <a className="navbar-brand text-light fw-bold" href="#">
       MailMagnet
     </a>
     <button
@@ -25,29 +25,27 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link text-light" to="/">
             Home
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/signup">
+          <NavLink className="nav-link text-light" to="/signup">
             Signup
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/login">
+          <NavLink className="nav-link text-light" to="/login">
             Login
           </NavLink>
         </li>
-       
-        
-   
         <li className="nav-item">
-          <NavLink className="nav-link" to="/newsletter">
+          <NavLink className="nav-link text-light" to="/newsletter">
             Newsletter
           </NavLink>
        </li>
       </ul>
+      
       {/* <form className="d-flex" role="search">
         <input
           className="form-control me-2"

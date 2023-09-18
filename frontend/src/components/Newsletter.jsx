@@ -1,5 +1,5 @@
 import React from 'react'
-const NewsLetter =() =>{
+const Newsletter =() =>{
   return (
     <div >
        <>
@@ -145,4 +145,4 @@ const NewsLetter =() =>{
     </div>
   );
 };
-export default NewsLetter;
+export default Newsletter;
