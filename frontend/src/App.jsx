@@ -8,6 +8,7 @@ import Newsletter from './components/Newsletter';
 import { UserProvider } from './UserContext';
 import ManageSubscriber from './components/ManageSubscriber';
 import MailContent from './components/MailContent';
+import Plugin from './components/Plugin';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           {/* <Route element={ <Signup/>} path='/signup'/> */}
           <Route element={ <ManageSubscriber /> } path='subscriber' />
           <Route element={ <MailContent/>} path='content'/>
+          <Route element={ <Plugin/>} path='plugin'/>
 
         </Routes>
       </UserProvider>

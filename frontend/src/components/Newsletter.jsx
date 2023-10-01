@@ -7,7 +7,7 @@ const NewsLetter = ({ownerId}) => {
     initialValues: {
       name: "",
       email: "",
-      owner: '650b058db9cf6c04a6fe6c10'
+      owner: ownerId
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       // values.avatar = selImg;

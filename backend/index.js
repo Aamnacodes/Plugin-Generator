@@ -5,6 +5,7 @@ const express = require('express');
 const userRouter = require('./routers/userRouter');
 const utilRouter = require('./routers/util');
 const subscriberRouter = require ('./routers/subscribeRouter');
+const mailRouter = require ('./routers/mailUtil');
 const cors = require('cors');
 
 
@@ -22,6 +23,7 @@ app.use(cors());
 app.use('/user', userRouter);
 
 app.use('/util',utilRouter);
+app.use('/mail',mailRouter);
 
 app.use('/subscriber',subscriberRouter);
 
