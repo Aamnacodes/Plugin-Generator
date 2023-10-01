@@ -1,6 +1,55 @@
 import React from 'react'
+import { useFormik } from 'formik';
+
+import Swal from "sweetalert2";
 const NewsLetter =() =>{
+
+
+  const newsLetter = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+    
+    },
+    onSubmit: async (values, { resetForm, setSubmitting }) => {
+      // values.avatar = selImg;
+
+      console.log(values);
+      setSubmitting(true);
+
+      const res = await fetch("http://localhost:5000/user/add", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log(res.status);
+      setSubmitting(false);
+
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "WellDone!",
+          text: "Subscribed Successfully 😎",
+        });
+        // navigate("/login");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Something went wrong",
+        });
+      }
+
+      // write code to submit form to server
+    },
+  });
+
   return (
+
+    
     <div >
        <>
   {/* Section: Design Block */}
@@ -27,10 +76,7 @@ const NewsLetter =() =>{
             className="mb-4 opacity-70"
             style={{ color: "hsl(218, 81%, 85%)" }}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Temporibus, expedita iusto veniam atque, magni tempora mollitia
-            dolorum consequatur nulla, neque debitis eos reprehenderit quasi ab
-            ipsum nisi dolorem modi. Quos?
+            Never miss an update Again !
           </p>
         </div>
         <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -44,44 +90,47 @@ const NewsLetter =() =>{
           />
           <div className="card bg-glass">
             <div className="card-body px-4 py-5 px-md-5">
-              <form>
+              <form onSubmit={newsLetter.handleSubmit}>
                 {/* 2 column grid layout with text inputs for the first and last names */}
                 <div className="row">
                   <div className="col-md-6 mb-4">
                     <div className="form-outline">
+                      
+                    <label className="form-label" htmlFor="">
+                        Name
+                      </label>
+                      <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+                      {newsLetter.touched.name && newsLetter.errors.name}
+                      </span>
                       <input
                         type="text"
-                        id="form3Example1"
+                        id="name"
                         className="form-control"
+                        onChange={newsLetter.handleChange}
+                        value={newsLetter.values.name}
                       />
-                      <label className="form-label" htmlFor="form3Example1">
-                        First name
-                      </label>
+                     
                     </div>
                   </div>
-                  <div className="col-md-6 mb-4">
-                    <div className="form-outline">
-                      <input
-                        type="text"
-                        id="form3Example2"
-                        className="form-control"
-                      />
-                      <label className="form-label" htmlFor="form3Example2">
-                        Last name
-                      </label>
-                    </div>
-                  </div>
+                  
                 </div>
                 {/* Email input */}
                 <div className="form-outline mb-4">
-                  <input
-                    type="email"
-                    id="form3Example3"
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example3">
+                  
+                <label className="form-label" htmlFor="" >
                     Email address
                   </label>
+                  
+                  <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+                   {newsLetter.touched.email && newsLetter.errors.email}
+                  </span>
+                  <input
+                    type="email"
+                    id="email"
+                    className="form-control"
+                    onChange={newsLetter.handleChange}
+                    value={newsLetter.values.email}
+                  />
                 </div>
                 
                 {/* Checkbox */}
