@@ -2,11 +2,12 @@ import React from "react";
 import { useFormik } from "formik";
 
 import Swal from "sweetalert2";
-const NewsLetter = () => {
+const NewsLetter = ({ownerId}) => {
   const newsLetterForm = useFormik({
     initialValues: {
       name: "",
       email: "",
+      owner: '650b058db9cf6c04a6fe6c10'
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       // values.avatar = selImg;

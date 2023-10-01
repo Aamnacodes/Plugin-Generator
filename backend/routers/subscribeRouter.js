@@ -47,10 +47,10 @@ router.get('/getall', (req, res) => {
         });
 
 });
-router.get('/getbyid/:id', (req, res) => {
+router.get('/getbyowner/:id', (req, res) => {
 
     // Model.findOne({_id : req.params._id})
-    Model.findById(req.params.id)
+    Model.find({owner : req.params.id})
         .then((result) => {
             res.json(result);
         }).catch((err) => {

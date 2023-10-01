@@ -18,9 +18,10 @@ if(root){
 const plugin = document.getElementById('plugin')
 if(plugin){
   const pluginEl = ReactDOM.createRoot(plugin);
+  const ownerid = plugin.getAttribute('owner-id');
   pluginEl.render(
     <React.StrictMode>
-      <NewsLetter />
+      <NewsLetter ownerId={ownerid} />
     </React.StrictMode>
   );
 }

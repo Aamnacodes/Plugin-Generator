@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom';
 const ManageSubscriber = () => {
     
     const [userList, setUserList] = useState([]);
+    const [currentUser, setCurrentUser] = useState(
+      JSON.parse(sessionStorage.getItem('user'))
+    )
 
    const fetchUserData = async () => {
-    const res = await fetch('http://localhost:5000/user/getall');
+    const res = await fetch('http://localhost:5000/subscriber/getbyowner/'+currentUser._id);
     console.log(res.status);
 
     const data = await res.json();
