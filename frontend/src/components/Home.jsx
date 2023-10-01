@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import VanillaTilt from 'vanilla-tilt';
-import Navbar from './Navbar';
 
 const Home = () => {
   // useEffect(() => {

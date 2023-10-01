@@ -3,13 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NewsLetter from './components/Newsletter';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const root = document.getElementById('root')
+if(root){
+  const rootEl = ReactDOM.createRoot(root);
+  rootEl.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+const plugin = document.getElementById('plugin')
+if(plugin){
+  const pluginEl = ReactDOM.createRoot(plugin);
+  pluginEl.render(
+    <React.StrictMode>
+      <NewsLetter />
+    </React.StrictMode>
+  );
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
