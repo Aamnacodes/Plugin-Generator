@@ -1,7 +1,7 @@
 .nav-item .active{
   font-weight: bold;
-  border-bottom: 2px solid #647b97;
-  color: #5e9695 !important;
+  border-bottom: 2px solid #61b8b5;
+  color: #90d4d1 !important;
 }
 .nav-item:hover{
   transform: scale(1.1);
@@ -15,7 +15,17 @@ button:hover{
 .cards{
   width: 300px;
   height: 75vh;
-  
+  transition: transform 300ms ease-in-out;
 }
-
-
+.cards:hover{
+  transform: scale(1.1);  
+}
+.hero{
+  background: linear-gradient(to bottom, #cce9e9, #628d8d);
+}
+.temp{
+  background: linear-gradient(to bottom, #628d8d, #bbdbda);
+}
+.feat{
+  background: linear-gradient(to bottom, #bbdbda, #628d8d);
+}

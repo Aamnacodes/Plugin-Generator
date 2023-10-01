@@ -2,7 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik';
 
 import Swal from "sweetalert2";
-const NewsLetter =() =>{
+const NewsLetter =() => {
 
 
   const newsLetter = useFormik({
@@ -46,7 +46,9 @@ const NewsLetter =() =>{
       // write code to submit form to server
     },
   });
+};
 
+const Newsletter =() =>{
   return (
 
     
@@ -194,4 +196,4 @@ const NewsLetter =() =>{
     </div>
   );
 };
-export default NewsLetter;
+export default Newsletter ;

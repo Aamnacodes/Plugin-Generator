@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import NewsLetter from './components/NewsLetter';
+import Newsletter from './components/Newsletter';
 import { UserProvider } from './UserContext';
 
 
@@ -18,7 +18,7 @@ const App = () => {
           <Route element={ <Home/>} path='/'/>
           <Route element={ <Signup/>} path='signup'/>
           <Route element={ <Login/>} path='login'/>
-          <Route element={ <NewsLetter/>} path='newsletter'/>
+          <Route element={ <Newsletter/>} path='newsletter'/>
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
         </Routes>
