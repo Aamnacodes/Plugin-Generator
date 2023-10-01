@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Newsletter from './components/Newsletter';
 import { UserProvider } from './UserContext';
+import ManageSubscriber from './components/ManageSubscriber';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route element={ <Newsletter/>} path='newsletter'/>
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
+          <Route element={ <ManageSubscriber /> } path='subscriber' />
         </Routes>
       </UserProvider>
     </BrowserRouter>

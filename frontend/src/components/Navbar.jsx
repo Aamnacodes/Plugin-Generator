@@ -1,8 +1,42 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import useUserContext from '../UserContext';
 
 
 const Navbar = () => {
+  const [currentUser, setcurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  );
+
+  const { loggedIn, logout } = useUserContext();
+
+  const showLoginOptions = () => {
+    if (currentUser !== null || loggedIn ) {
+      return (
+        <>
+          <li className="nav-item">
+            <button className="btn btn-danger" onClick={logout} >Logout</button>
+          </li>
+          
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/signup">
+              Signup
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+          </li>
+        </>
+      );
+    }
+  };
      
      
    return (
@@ -44,6 +78,11 @@ const Navbar = () => {
             Newsletter
           </NavLink>
        </li>
+       <li className="nav-item">
+            <NavLink className="nav-link" to="/subscriber">
+              Manage Subscriber
+            </NavLink>
+          </li>
       </ul>
       
       {/* <form className="d-flex" role="search">
@@ -63,5 +102,6 @@ const Navbar = () => {
 
   )
 }
+  
 
 export default Navbar;
