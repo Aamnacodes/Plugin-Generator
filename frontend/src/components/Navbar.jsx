@@ -79,10 +79,17 @@ const Navbar = () => {
           </NavLink>
        </li>
        <li className="nav-item">
-            <NavLink className="nav-link" to="/subscriber">
+            <NavLink className="nav-link text-light" to="/subscriber">
               Manage Subscriber
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link text-light" to="/content">
+              Mail Content
+            </NavLink>
+          </li>
+
+          {showLoginOptions()}
       </ul>
       
       {/* <form className="d-flex" role="search">
