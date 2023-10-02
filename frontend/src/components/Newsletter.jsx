@@ -162,7 +162,7 @@ const NewsLetter = ({ownerId}) => {
                         Subscribe
                       </button>
                       {/* Register buttons */}
-                      <div className="text-center">
+                      {/* <div className="text-center">
                         <p>or sign up with:</p>
                         <button
                           type="button"
@@ -188,7 +188,7 @@ const NewsLetter = ({ownerId}) => {
                         >
                           <i className="fab fa-github" />
                         </button>
-                      </div>
+                      </div> */}
                     </form>
                   </div>
                 </div>

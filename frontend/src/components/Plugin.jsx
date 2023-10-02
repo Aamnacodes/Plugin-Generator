@@ -11,11 +11,13 @@ const Plugin = () => {
     }
   return (
     <div>
-        <textarea className='form-control' value={getPluginCode()} rows={5}>
 
+   
+
+        <textarea className='form-control' value={getPluginCode()} rows={5}>
         </textarea>
     </div>
   )
 }
 
-export default Plugin
+export default Plugin;

@@ -45,7 +45,7 @@ const MailContent = () => {
 
   return (
     <div>
-        <div className="container">
+        <div className="container mt-2">
             <div className="row">
                 <div className="col-md-12">
                     <div className="card mt-5">

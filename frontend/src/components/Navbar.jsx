@@ -88,6 +88,8 @@ const Navbar = () => {
               Mail Content
             </NavLink>
           </li>
+          
+          
 
           {showLoginOptions()}
       </ul>
