@@ -24,12 +24,12 @@ const Navbar = () => {
       return (
         <>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/signup">
+            <NavLink className="nav-link text-light" to="/signup">
               Signup
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
+            <NavLink className="nav-link text-light" to="/login">
               Login
             </NavLink>
           </li>
@@ -46,7 +46,7 @@ const Navbar = () => {
       MailMagnet
     </a>
     <button
-      className="navbar-toggler"
+      className="navbar-toggler bg-light"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -63,7 +63,7 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink className="nav-link text-light" to="/signup">
             Signup
           </NavLink>
@@ -72,7 +72,7 @@ const Navbar = () => {
           <NavLink className="nav-link text-light" to="/login">
             Login
           </NavLink>
-        </li>
+        </li> */}
         <li className="nav-item">
           <NavLink className="nav-link text-light" to="/newsletter">
             Newsletter

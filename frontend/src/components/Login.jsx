@@ -79,9 +79,9 @@ const Login = () => {
             transition={{ duration: 0.3, type: 'spring', stiffness: 50, damping: 10 }}>
 
             <div className="w-25" style={{marginTop:'60px'}}>
-                <div className="card" style={{ backgroundColor: '#FCFAE4', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', border: '1px solid black' }}>
+                <div className="card bg-card" >
                     <div className="card-body">
-                        <h3 className="text-center">Login Form</h3>
+                        <h3 className=" fw-bolder text-center">Login Form</h3>
                         <hr />
 
                         <form onSubmit={loginForm.handleSubmit}>
@@ -92,10 +92,10 @@ const Login = () => {
                             <label htmlFor="">Password</label>
                             <span style={{ color: 'red', fontsize: '0.7em', marginLeft: 10 }}>{loginForm.errors.password}</span>
                             <input type="password" className="form-control mb-3" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} />
-                            <div class="notice" style={{ color: "#c1c1c1; font-size: 12px" }}>
+                            <div class="notice fst-italic" style={{ color: "#c1c1c1; font-size: 12px" }}>
                                 
-                                <input type="checkbox" name="checkbox" value="check" id="agree" /> Remember me.</div>
-                                <button className="btn btn-warning w-100 mt-5" style={{ border: '1px solid black' }}>Submit</button>
+                                <input  type="checkbox" name="checkbox" value="check" id="agree" /> Remember me.</div>
+                                <button className="btn text-light w-100 mt-5" style={{backgroundColor:'#176969'}}>Submit</button>
                             
                         </form>
 
