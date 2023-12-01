@@ -22,7 +22,7 @@ const App = () => {
           <Route element={ <Home/>} path='/'/>
           <Route element={ <Signup/>} path='signup'/>
           <Route element={ <Login/>} path='login'/>
-          <Route element={ <Newsletter/>} path='newsletter'/>
+          <Route element={ <Newsletter ownerId={'65190df8918b18449043ff65'} />} path='newsletter'/>
           {/* <Route element={ <Login/>} path='/login'/> */}
           {/* <Route element={ <Signup/>} path='/signup'/> */}
           <Route element={ <ManageSubscriber /> } path='subscriber' />

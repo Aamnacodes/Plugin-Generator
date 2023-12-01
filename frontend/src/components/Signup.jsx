@@ -83,10 +83,10 @@ const Signup = () => {
       exit={{ opacity: 0, x: "-100%" }}
       transition={{ duration: 0.3, type: "spring", stiffness: 50, damping: 10 }}
     >
-      <div className="w-25" style={{ marginTop: '60px' }}>
-        <div className="card" style={{ backgroundColor: '#FCFAE4', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', border: '1px solid black' }}>
+      <div className="w-25" style={{marginTop:'60px'}}>
+        <div className="card">
           <div className="card-body">
-            <h3 className="text-center">Signup Form</h3>
+            <h3 className=" fw-bolder text-center">Signup Form</h3>
             <hr />
 
             <form onSubmit={signupForm.handleSubmit}>
@@ -141,10 +141,10 @@ const Signup = () => {
 
               <input type="checkbox" name="checkbox" value="check" id="agree" /> I agree to the Terms and Conditions.
 
-
+              
               <button
                 disabled={signupForm.isSubmitting}
-                className="btn btn-warning w-100 mt-5" style={{ border: '1px solid black' }}
+                className="btn btn-primary w-100 mt-5"
               >
                 Submit
               </button>

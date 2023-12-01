@@ -15,7 +15,7 @@ const Home = () => {
     <div className='mt-5'>
 
       <main className='d-flex hero' style={{height:'615px'}}>
-        <div className=' fst-italic text-center' style={{ fontFamily: 'Roboto Slab,serif', padding: '120px', paddingTop:'180px'}}>
+        <div className='fst-italic text-center' style={{ fontFamily: 'Roboto Slab,serif', padding: '120px', paddingTop:'100px'}}>
           <p className='' style={{ fontWeight: '700', fontSize: '2.3em', color: '#053B50' }}>Welcome to our Newsletter Plugin website!</p>
           <p style={{ marginBottom: '80px', color: '#053B50', fontSize: '1.3em' }}>where we transform your email marketing efforts into seamless and effective campaigns that captivate and connect with your audience.</p>
           <p className='text-dark'>Get started on your email marketing journey with just one click – <button className='btn rounded-pill' style={{ backgroundColor: '#053B50' }}><a className='text-decoration-none fw-bold' style={{ color: '#EEE' }} href="signup">Sign up</a></button> now!</p>
