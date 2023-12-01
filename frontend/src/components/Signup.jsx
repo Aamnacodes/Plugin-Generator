@@ -14,7 +14,10 @@ const Signup = () => {
       name: "",
       email: "",
       password: "",
-      age: "",
+      confirmPassword: '',
+      age: '',
+      phoneNumber: ''
+
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       values.avatar = selImg;
@@ -52,7 +55,7 @@ const Signup = () => {
     },
   });
 
-  const uploadFile = async (e) => {
+  const uploadfile = async (e) => {
     if (!e.target.files[0]) return;
     const file = e.target.files[0];
     setSelImg(file.name);
@@ -80,8 +83,8 @@ const Signup = () => {
       exit={{ opacity: 0, x: "-100%" }}
       transition={{ duration: 0.3, type: "spring", stiffness: 50, damping: 10 }}
     >
-      <div className="w-25" style={{marginTop:'60px'}}>
-        <div className="card">
+      <div className="w-25" style={{ marginTop: '60px' }}>
+        <div className="card" style={{ backgroundColor: '#FCFAE4', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', border: '1px solid black' }}>
           <div className="card-body">
             <h3 className="text-center">Signup Form</h3>
             <hr />
@@ -123,12 +126,25 @@ const Signup = () => {
                 value={signupForm.values.password}
               />
 
-              
+              <label htmlFor="">Confirm Password</label>
+              <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+                {signupForm.errors.password}
+              </span>
+              <input
+                type="password"
+                className="form-control mb-3"
+                name="confirmPassword"
+                onChange={signupForm.handleChange}
+                value={signupForm.values.confirmPasswordpassword}
+              />
+              {signupForm.errors.confirmPassword && <div>{signupForm.errors.confirmPassword}</div>}
 
-              
+              <input type="checkbox" name="checkbox" value="check" id="agree" /> I agree to the Terms and Conditions.
+
+
               <button
                 disabled={signupForm.isSubmitting}
-                className="btn btn-primary w-100 mt-5"
+                className="btn btn-warning w-100 mt-5" style={{ border: '1px solid black' }}
               >
                 Submit
               </button>
@@ -139,7 +155,7 @@ const Signup = () => {
     </motion.div>
   );
 };
-    
+
 
 
 export default Signup;
