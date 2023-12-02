@@ -45,6 +45,10 @@ const Navbar = () => {
     <a className="navbar-brand text-light fw-bold" href="#">
       MailMagnet
     </a>
+    <img 
+      src='\gif.gif'
+      width={55} height={55} 
+      alt='main' />
     <button
       className="navbar-toggler bg-light"
       type="button"
@@ -56,8 +60,8 @@ const Navbar = () => {
     >
       <span className="navbar-toggler-icon" />
     </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+    <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul className="navbar-nav mb-2 mb-lg-0">
         <li className="nav-item">
           <NavLink className="nav-link text-light" to="/">
             Home
@@ -88,9 +92,10 @@ const Navbar = () => {
               Mail Content
             </NavLink>
           </li>
-          
-          
-
+          </ul>
+          </div>
+        <div>
+        <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
           {showLoginOptions()}
       </ul>
       

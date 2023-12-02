@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShuffle, faPalette, faChartPie } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Home = () => {
   // useEffect(() => {
@@ -14,14 +17,17 @@ const Home = () => {
   return (
     <div className='mt-5'>
 
-      <main className='d-flex hero' style={{height:'615px'}}>
-        <div className='fst-italic text-center' style={{ fontFamily: 'Roboto Slab,serif', padding: '120px', paddingTop:'100px'}}>
-          <p className='' style={{ fontWeight: '700', fontSize: '2.3em', color: '#053B50' }}>Welcome to our Newsletter Plugin website!</p>
+      <main className='d-flex top' style={{height:'615px'}}>
+        <div className='fst-italic text-center' style={{ fontFamily: 'Roboto Slab,serif', padding: '120px', paddingTop:'150px', width: '75%'}}>
+          <p className='mb-4' style={{ fontWeight: '700', fontSize: '2.7em', color: '#053B50' }}>Welcome to our Newsletter Plugin website!</p>
           <p style={{ marginBottom: '80px', color: '#053B50', fontSize: '1.3em' }}>where we transform your email marketing efforts into seamless and effective campaigns that captivate and connect with your audience.</p>
           <p className='text-dark'>Get started on your email marketing journey with just one click – <button className='btn rounded-pill' style={{ backgroundColor: '#053B50' }}><a className='text-decoration-none fw-bold' style={{ color: '#EEE' }} href="signup">Sign up</a></button> now!</p>
         </div>
-        <div className="d-flex align-items-center" >
-          <img style={{ marginRight: '100px' }} className='rounded-pill' src='https://wppals.com/wp-content/uploads/2020/09/email-campaign-concept-illustration_114360-1633.jpg' width={400} height={300} alt='main' />
+        <div className="d-flex align-items-center" style={{ width: '25%' }} >
+          <img 
+          src='\gif2.gif'
+          width={250} height={250} 
+          alt='main' />
         </div>
       </main>
 
@@ -67,25 +73,22 @@ const Home = () => {
       <p className='pb-2 display-5 mb-5 text-center fw-bold fst-italic'  style={{ color: '#053B50', marginTop:'-50px'}}>Features we provide</p>
       <div className='row g-4 py-5 row-cols-1 row-cols-lg-3'>
         <div className='feature col'>
-          <div className='feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3'>
-            <svg className='bi' width='1em' height='1em'>
-            </svg>
+          <div className='d-inline-flex align-items-center justify-content-center fs-1 mb-2'>
+            <FontAwesomeIcon icon={faShuffle} />
           </div>
           <h3 className='fs-3 fw-bold mt-3 mb-4' style={{color:'#053B50'}}>Seamless Integration</h3>
           <p style={{fontSize:'0.9em', color:'#053B50', fontStyle:'italic'}}>"Our newsletter plugin offers seamless integration with popular content management systems like WordPress, Joomla, and Drupal. With just a few clicks, you can effortlessly integrate our plugin into your website, ensuring a hassle-free setup process. Say goodbye to complex installation procedures and hello to a user-friendly experience."</p>
         </div>
         <div className='feature col'>
-          <div className='feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3'>
-          <svg className='bi' width='1em' height='1em'>
-            </svg>
+          <div className='d-inline-flex align-items-center justify-content-center fs-1 mb-2'>
+          <FontAwesomeIcon icon={faChartPie} />
           </div>
           <h3 className='fs-3 fw-bold mt-3 mb-4' style={{color:'#053B50'}}>Advanced Analytics</h3>
           <p style={{fontSize:'0.9em', color:'#053B50', fontStyle:'italic'}}>"Gain valuable insights into your email campaigns with our advanced analytics feature. Track open rates, click-through rates, subscriber engagement, and more in real-time. With this data at your fingertips, you can fine-tune your newsletter content and strategies for optimal results, ensuring your messages reach and resonate with your target audience."</p>
         </div>
         <div className='feature col'>
-          <div className='feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3'>
-          <svg className='bi' width='1em' height='1em'>
-            </svg>
+          <div className='d-inline-flex align-items-center justify-content-center fs-1 mb-2'>
+          <FontAwesomeIcon icon={faPalette} />
           </div>
           <h3 className='fs-3 fw-bold mt-3 mb-4' style={{color:'#053B50'}}>Customizable Templates</h3>
           <p style={{fontSize:'0.9em', color:'#053B50', fontStyle:'italic'}}>"Create stunning newsletters that match your brand's identity with our customizable templates. Choose from a wide range of professionally designed templates or personalize your own with our easy-to-use editor. Tailor your newsletters to your audience, giving you the perfect blend of style and substance to captivate your readers."</p>
@@ -105,18 +108,20 @@ const Home = () => {
       </div>
       <div className="col-md-4">
         <h5 className="mb-4 fw-bold text-decoration-underline">Quick Links</h5>
-        <ul className="list-unstyled">
-          <li><a className='text-decoration-none text-light' href="#">Home</a></li>
-          <li><a className='text-decoration-none text-light' href="#templates">Templates</a></li>
-          <li><a className='text-decoration-none text-light' href="#features">Features</a></li>
+        <ul className="list-unstyled social-icon-cont">
+          <li className='socialicon'><a className='socialicon' href="#">Home</a></li>
+          <li className='socialicon'><a className='socialicon' href="#templates">Templates</a></li>
+          <li className='socialicon'><a className='socialicon' href="#features">Features</a></li>
         </ul>
       </div>
       <div className="col-md-4">
-        <h5 className="mb-4 fw-bold text-decoration-underline">Connect With Us</h5>
-        <a href="#" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-        <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
-        <a href="#" className="social-icon"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="#" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
+      <h5 className="mb-4 fw-bold text-decoration-underline">Connect With Us</h5>
+      <div className='social-icon-cont'>
+      <a href="#" className="socialicon"><FontAwesomeIcon icon={faFacebookF} /></a>
+      <a href="#" className="socialicon"><FontAwesomeIcon icon={faTwitter} /></a>
+      <a href="#" className="socialicon"><FontAwesomeIcon icon={faInstagram} /></a>
+      <a href="#" className="socialicon"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+      </div>
       </div>
     </div>
     <div className="row mt-4">
@@ -126,7 +131,9 @@ const Home = () => {
     </div>
   </div>
 </footer>
-
+<script>
+  var rellax = new Rellax('.rellax');
+</script>
     </div>
   )
 }

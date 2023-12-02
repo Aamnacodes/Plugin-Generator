@@ -20,16 +20,28 @@ button:hover{
 .cards:hover{
   transform: scale(1.1);  
 }
-.hero{
-  background: linear-gradient(to bottom, #cce9e9, #628d8d);
+.social-icon-cont{
+  display: flex;
   flex-direction: column;
-  /* color: #176969; */
+}
+.socialicon li,a{
+  color:#fdfdfd;
+  transition: color 0.3s, transform 0.3s ease-in-out;
+  font-size: 20px;
+  text-decoration: none;
+}
+.socialicon:hover{
+  transform: scale(1.1);
+  color: #4ae0e0;
+}
+.top{
+  background: linear-gradient(to bottom, #7d8c9248, #7b89b0);
 }
 .temp{
-  background: linear-gradient(to bottom, #628d8d, #bbdbda);
+  background: linear-gradient(to bottom, #7b89b0, #7b89b0);
 }
 .feat{
-  background: linear-gradient(to bottom, #bbdbda, #628d8d);
+  background: linear-gradient(to bottom, #7b89b0,#7d8c9248);
 }
 .bg{
   height: 100vh;
