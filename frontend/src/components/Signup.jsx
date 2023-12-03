@@ -84,7 +84,7 @@ const Signup = () => {
       transition={{ duration: 0.3, type: "spring", stiffness: 50, damping: 10 }}
     >
       <div className="w-25" style={{marginTop:'60px'}}>
-        <div className="card">
+        <div className="card bg-card">
           <div className="card-body">
             <h3 className=" fw-bolder text-center">Signup Form</h3>
             <hr />
@@ -144,7 +144,8 @@ const Signup = () => {
               
               <button
                 disabled={signupForm.isSubmitting}
-                className="btn btn-primary w-100 mt-5"
+                className="btn text-light w-100 mt-5"
+                style={{backgroundColor:'#176969'}}
               >
                 Submit
               </button>
