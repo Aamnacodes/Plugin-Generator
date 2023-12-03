@@ -145,7 +145,7 @@ const Signup = () => {
               <button
                 disabled={signupForm.isSubmitting}
                 className="btn text-light w-100 mt-5"
-                style={{backgroundColor:'#176969'}}
+                style={{backgroundColor:'rgb(58, 78, 93)'}}
               >
                 Submit
               </button>

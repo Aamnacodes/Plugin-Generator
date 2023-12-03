@@ -64,7 +64,7 @@ const ManageSubscriber = () => {
 
 
   return (
-    <div>
+    <div className='top'>
         <h1 className='text-center fw-bold'>Manage User Data</h1>
         <hr />
 
