@@ -10,11 +10,11 @@ const ManageSubscriber = () => {
     )
 
    const fetchUserData = async () => {
-    const res = await fetch('http://localhost:5000/subscriber/getbyowner/'+currentUser._id);
+    const res = await fetch('http://localhost:5000/subscriber/getbyowner/'+currentUser?._id);
     console.log(res.status);
 
     const data = await res.json();
-    console.log(data);
+    console.log('data:', data);
     setUserList(data);
    }
   
