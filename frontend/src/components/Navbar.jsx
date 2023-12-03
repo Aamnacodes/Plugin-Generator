@@ -14,8 +14,22 @@ const Navbar = () => {
     if (currentUser !== null || loggedIn ) {
       return (
         <>
+          
+       <li className="nav-item">
+            <NavLink className="nav-link text-light" to="/subscriber">
+              Manage Subscriber
+            </NavLink>
+          </li>
+
+        
           <li className="nav-item">
-            <button className="btn btn-danger" onClick={logout} >Logout</button>
+            <NavLink className="nav-link text-light" to="/content">
+              Mail Content
+            </NavLink>
+          </li>
+
+          <li className="px-2 nav-item">
+            <button className="btn btn-light fw-bold" onClick={logout} >Logout</button>
           </li>
           
         </>
@@ -60,38 +74,18 @@ const Navbar = () => {
     >
       <span className="navbar-toggler-icon" />
     </button>
-    <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink className="nav-link text-light" to="/">
+          <NavLink className="px-4 nav-link text-light" to="/">
             Home
           </NavLink>
         </li>
-        {/* <li className="nav-item">
-          <NavLink className="nav-link text-light" to="/signup">
-            Signup
-          </NavLink>
-        </li>
         <li className="nav-item">
-          <NavLink className="nav-link text-light" to="/login">
-            Login
-          </NavLink>
-        </li> */}
-        <li className="nav-item">
-          <NavLink className="nav-link text-light" to="/newsletter">
+          <NavLink className="px-3 nav-link text-light" to="/newsletter">
             Newsletter
           </NavLink>
        </li>
-       <li className="nav-item">
-            <NavLink className="nav-link text-light" to="/subscriber">
-              Manage Subscriber
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link text-light" to="/content">
-              Mail Content
-            </NavLink>
-          </li>
           </ul>
           </div>
         <div>
@@ -99,17 +93,6 @@ const Navbar = () => {
           {showLoginOptions()}
       </ul>
       
-      {/* <form className="d-flex" role="search">
-        <input
-          className="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn btn-outline-success" type="submit">
-          Search
-        </button>
-      </form> */}
           </div>
         </div>
       </nav>

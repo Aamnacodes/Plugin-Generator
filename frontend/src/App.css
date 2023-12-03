@@ -6,6 +6,9 @@
 .nav-item:hover{
   transform: scale(1.1);
 }
+.nav-item{
+  padding-right: 10px;
+}
 button:hover{
   transform: scale(1.1);
 }

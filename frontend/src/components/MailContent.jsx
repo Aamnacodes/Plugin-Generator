@@ -44,7 +44,7 @@ const MailContent = () => {
     }
 
     const trigger = () => {
-        sendMail(mailObject.subject, `<h1>Mail Test ABC</h1><span>${mailObject.mailBody}</span>`)
+        sendMail(mailObject.subject, `<h1>Mail Magnet</h1><span>${mailObject.mailBody}</span>`)
     }
 
     const onChange = (e) => {
