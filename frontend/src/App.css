@@ -47,28 +47,19 @@ button:hover{
   height: 100vh;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #628d8d, #bbdbda);
+  background: linear-gradient(to bottom, #627c8d, #bbd4db);
 }
 .bg label,h3{
-  color: rgb(58, 93, 93);
+  color: rgb(58, 78, 93);
   font-weight: 600;
 }
  .bg-card{
-  background: linear-gradient(to bottom, #e0f3f7, #478e96);
+  background: linear-gradient(to bottom, #e0ecf7, #547c97);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
  }
 /* Default styles for larger screens */
 @media (min-width: 992px) {
   /* Adjust the main section padding and text layout */
-  .hero {
-    flex-direction: row;
-  }
-  .hero > div {
-    flex-basis: 50%;
-  }
-  .hero img {
-    margin-right: 100px;
-  }
   .temp {
     padding: 120px;
   }
@@ -83,83 +74,120 @@ button:hover{
 /* Tablet styles for screens between 768px and 991px */
 @media (max-width: 992px) {
   /* Adjust main section padding and text layout */
-  .hero {
+  .top {
     flex-direction: row;
     margin-top: -80px;
   }
-  .hero img{
+  .top img{
     width: 100%;
     height: 35vh;
     padding: 10px;
   }
-  .hero > div {
+  .top > div {
     flex-basis: auto;
     margin-bottom: 20px;
   }
-  .hero img {
+  .top img {
     margin-right: 0;
   }
   .temp {
     padding: 60px;
+    padding-top: 150px;
   }
   .feat {
     padding: 60px;
   }
-  .cards {
-    flex-direction: row;
-    height: 100vh;
-  }
-  .card {
-    width: 100%;
-    height: 50vh;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .card-img-top {
-    max-width: 100%;
-  }
-  .card-body {
-    padding: 10px;
-  }
   .nav-item:hover{
     transform: scaleY(1.1);
   }
+  .info-card img{
+    padding-right: 50px;
+  }
 }
 
-/* Mobile styles for screens up to 768px */
-@media (max-width: 769px) {
+/* General Styles */
+/* body {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styles */
+/* .navbar {
+  padding: 10px;
+} */
+
+/* Main Content Styles */
+/* main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.page-title,
+.page-content,
+.page-sign,
+.page-gif img {
+  width: 100%;
+} */
+
+/* Feature Section Styles */
+/* .feat {
+  padding: 60px;
+} */
+
+/* Info Card Styles */
+/* .info-card {
+  margin-bottom: 20px;
+} */
+
+/* Footer Styles */
+/*  */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .navbar-links {
     top: 40px;
   }
-  .hero img{
-    padding:10px;
+  body{
+    padding-top: 100px;
+    width: 100%;
+    margin: auto;
   }
-  .hero{
-    margin-top: -80px;
+  .top p{
+    font-size: 10px;
+  }
+  .top img{
+    width:0%
   }
   .temp {
-    padding: 40px;
+    padding-top: 990px;
+    /* padding: 40px; */
+  }
+  .temp > div > .info-card{
+    padding: 10px;
+    font-size: x-small;
   }
   .feat {
-    padding: 40px;
+    padding: 20px;
   }
-  /* Add styles for card responsiveness */
-  .cards {
-    flex-basis: 100%;
-    height: 100vh;
+
+  .navbar-toggler {
+    background-color: #053B50;
   }
-  .card {
-    width: 50%;
-    height: 50vh;
-    max-width: 100%;
-    margin: 0 auto;
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
   }
-  .card-img-top {
-    max-width: 100%;
+
+  .navbar-nav li {
+    margin: 10px 0;
   }
-  .card-body {
-    padding: 10px;
-  }
-  /* Adjust other styles as needed */
 }
+
 

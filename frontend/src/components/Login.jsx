@@ -95,7 +95,7 @@ const Login = () => {
                             <div class="notice fst-italic" style={{ color: "#c1c1c1; font-size: 12px" }}>
                                 
                                 <input  type="checkbox" name="checkbox" value="check" id="agree" /> Remember me.</div>
-                                <button className="btn text-light w-100 mt-5" style={{backgroundColor:'#176969'}}>Login</button>
+                                <button className="btn text-light w-100 mt-5" style={{backgroundColor:'rgb(58, 78, 93)'}}>Login</button>
                             
                         </form>
 

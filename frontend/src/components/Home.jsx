@@ -41,7 +41,7 @@ const Home = () => {
   }, []); 
 
   return (
-    <div className='mt-5'>
+    <div className='body mt-5'>
 
       <main className='d-flex top' style={{height:'615px'}}>
         <div className='fst-italic text-center' style={{ fontFamily: 'Roboto Slab,serif', padding: '120px', paddingTop:'150px', width: '75%'}}>
@@ -98,7 +98,7 @@ const Home = () => {
 
 
     <div className='px-5 feat' id='features'  style={{ padding: '120px', fontFamily: 'Roboto Slab, serif' }}>
-    <p className='info-card display-4 p-2 mb-4 shadow rounded-pill text-center fw-bold fst-italic'  style={{color:'#053B50', backgroundColor:'#D8D9DA', width:'70%', marginLeft:'190px', marginTop:'-50px'}}>Features we Provide</p>
+    <p className='info-card display-4 p-2 mb-4 shadow rounded-pill text-center fw-bold fst-italic'  style={{color:'#053B50', backgroundColor:'#D8D9DA', width:'100%', marginTop:'-50px'}}>Features we Provide</p>
       <div className='row g-4 py-5 row-cols-1 row-cols-lg-3'>
         <div className='info-card feature col'>
           <div className='d-inline-flex align-items-center justify-content-center fs-1 mb-2'>

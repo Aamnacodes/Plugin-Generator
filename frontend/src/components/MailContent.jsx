@@ -44,30 +44,30 @@ const MailContent = () => {
     }
 
   return (
-    <div>
-        <div className="container mt-2">
+    <div className='bg-light' style={{height:'100vh', width:'100%'}}>
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-md-12">
-                    <div className="card mt-5">
+                    <div className="shadow top card mt-5">
                         <div className="card-header">
-                            <h4>Mail Content</h4>
+                            <p className='display-6 fst-italic'>Mail Content</p>
                         </div>
                         <div className="card-body">
                             {/* <form> */}
-                                <div className="form-group mb-3">
+                                <div className="fw-bold form-group mb-3">
                                     <label>Subject</label>
-                                    <input type="text" className="form-control" placeholder="Enter Subject" />
+                                    <input type="text" className="bg-light form-control" placeholder="Enter Subject" />
                                 </div>
-                                <div className="form-group mb-3">
+                                <div className="fw-bold form-group mb-3">
                                     <label>Body</label>
-                                    <textarea className="form-control" rows="5" placeholder="Enter Body"></textarea>
+                                    <textarea className="bg-light form-control" rows="5" placeholder="Enter Body"></textarea>
                                 </div>
-                                <div className="form-group mb-3">
+                                <div className="fw-bold form-group mb-3">
                                     <label>Attachment</label>
-                                    <input type="file" className="form-control" />
+                                    <input type="file" className="bg-light form-control" />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <button onClick={trigger} type="submit" className="btn btn-primary">Send</button>
+                                    <button onClick={trigger} type="submit" className="btn fw-bold btn-primary">Send</button>
                                 </div>
                             {/* </form> */}
                         </div>
