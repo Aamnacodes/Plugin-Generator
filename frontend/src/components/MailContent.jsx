@@ -17,7 +17,7 @@ const MailContent = () => {
    const fetchUserData = async () => {
     const res = await fetch('http://localhost:5000/subscriber/getbyowner/'+currentUser?._id);
     const data = await res.json();
-    setSubsList(data?.map((e) => e.email));
+    setSubsList(data?.length > 0 ? data?.map((e) => e.email) : []);
    }
 
    useEffect(() => {

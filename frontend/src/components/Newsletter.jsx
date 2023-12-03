@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 
 import Swal from "sweetalert2";
 const NewsLetter = ({ownerId}) => {
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  )
   const newsLetterForm = useFormik({
     initialValues: {
       name: "",
       email: "",
-      owner: ownerId
+      owner: ownerId === undefined ? currentUser?._id : ownerId
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       // values.avatar = selImg;
