@@ -44,7 +44,8 @@ const ManageSubscriber = () => {
             </thead>
             <tbody>
               {
-                userList.map( (user) => ( <tr>
+                userList.length > 0 ?
+                (userList?.map( (user) => ( <tr>
                   <td>{user._id}</td>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
@@ -55,7 +56,7 @@ const ManageSubscriber = () => {
                   <td>
                     <button onClick={ () => { deleteUser(user._id) } } className='btn btn-danger'>Delete</button>
                   </td>
-                </tr> ) )
+                </tr> ) )) : ''
               }
             </tbody>
           </table>
