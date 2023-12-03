@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 const MailContent = () => {
+    const defaultItem = () => {
+        return {
+            subject: '',
+            mailBody: '',
+        }
+    }
 
+    const [mailObject, setMailObject] = useState(defaultItem());
     const [subsList, setSubsList] = useState([]);
     const [currentUser, setCurrentUser] = useState(
       JSON.parse(sessionStorage.getItem('user'))
@@ -9,11 +16,8 @@ const MailContent = () => {
 
    const fetchUserData = async () => {
     const res = await fetch('http://localhost:5000/subscriber/getbyowner/'+currentUser?._id);
-    console.log(res.status);
-
     const data = await res.json();
-    console.log(data);
-    setSubsList(data);
+    setSubsList(data?.map((e) => e.email));
    }
 
    useEffect(() => {
@@ -22,12 +26,12 @@ const MailContent = () => {
    
 
     const sendMail = (subject, content) => {
-        subsList.forEach(async (subscriber) => {
+        subsList.forEach(async (mailId) => {
             const res = await fetch('http://localhost:5000/mail/sendmail', {
                 method: 'POST',
                 body : JSON.stringify({
                     from: 'plugingenerator96@gmail.com',
-                    to: subscriber.email,
+                    to: mailId,
                     subject,
                     html: content
                 }),
@@ -35,14 +39,25 @@ const MailContent = () => {
                     'Content-Type' : 'application/json'
                 }
             });
-            if(res.status === 201) console.log('mail sent to '+subscriber.email);
+            if(res.status === 201) console.log('mail sent to '+mailId);
         })
     }
 
     const trigger = () => {
-        sendMail('some subject', '<h1>Mail Test</h1><button>Mail Content</button>')
+        sendMail(mailObject.subject, `<h1>Mail Test ABC</h1><span>${mailObject.mailBody}</span>`)
     }
 
+    const onChange = (e) => {
+        const { target } = e;
+        const { name, value } = target;
+        setMailObject((ps) => {
+            return {
+                ...ps,
+                [name]: value,
+            };
+        })
+
+    }
   return (
     <div className='bg-light' style={{height:'100vh', width:'100%'}}>
         <div className="container mt-5">
@@ -56,11 +71,25 @@ const MailContent = () => {
                             {/* <form> */}
                                 <div className="fw-bold form-group mb-3">
                                     <label>Subject</label>
-                                    <input type="text" className="bg-light form-control" placeholder="Enter Subject" />
+                                    <input
+                                        name="subject" 
+                                        type="text" 
+                                        className="form-control" 
+                                        placeholder="Enter Subject"
+                                        onChange={onChange}
+                                        value={mailObject.subject} 
+                                    />
                                 </div>
                                 <div className="fw-bold form-group mb-3">
                                     <label>Body</label>
-                                    <textarea className="bg-light form-control" rows="5" placeholder="Enter Body"></textarea>
+                                    <textarea 
+                                        name="mailBody"
+                                        className="form-control" 
+                                        rows="5" 
+                                        placeholder="Enter Body"
+                                        onChange={onChange}
+                                        value={mailObject.mailBody}  >
+                                    </textarea>
                                 </div>
                                 <div className="fw-bold form-group mb-3">
                                     <label>Attachment</label>
