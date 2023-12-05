@@ -5,12 +5,13 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Newsletter from './components/Newsletter';
+import Newsletter from './components/NewsLetter';
 import { UserProvider } from './UserContext';
 import ManageSubscriber from './components/ManageSubscriber';
 import MailContent from './components/MailContent';
 import Plugin from './components/Plugin';
 import UserAuth from './components/UserAuth';
+import Docs from './components/Docs';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Route element={ <MailContent/>} path='content'/>
           <Route element={ <Plugin/>} path='plugin'/>
           <Route element={ <UserAuth>  </UserAuth> } path="Profile" />
+          <Route element={ <Docs/> } path="Docs" />
 
         </Routes>
       </UserProvider>

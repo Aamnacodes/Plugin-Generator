@@ -102,7 +102,9 @@ const NewsLetter = ({ownerId}) => {
                                 color: "red",
                                 fontSize: "0.7em",
                                 marginLeft: 10,
+                                width: "100%"
                               }}
+                              
                             >
                               {newsLetterForm.touched.name &&
                                 newsLetterForm.errors.name}
@@ -111,6 +113,7 @@ const NewsLetter = ({ownerId}) => {
                               type="text"
                               id="name"
                               className="form-control"
+                              style={{ width: "100%" }}
                               onChange={newsLetterForm.handleChange}
                               value={newsLetterForm.values.name}
                             />

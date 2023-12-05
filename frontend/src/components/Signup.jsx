@@ -83,7 +83,7 @@ const Signup = () => {
       exit={{ opacity: 0, x: "-100%" }}
       transition={{ duration: 0.3, type: "spring", stiffness: 50, damping: 10 }}
     >
-      <div className="w-25" style={{marginTop:'60px'}}>
+      <div className="w-30" style={{marginTop:'60px'}}>
         <div className="card bg-card">
           <div className="card-body">
             <h3 className=" fw-bolder text-center">Signup Form</h3>
@@ -91,7 +91,7 @@ const Signup = () => {
 
             <form onSubmit={signupForm.handleSubmit}>
               <label htmlFor="">Name</label>
-              <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+              <span style={{ color: "red", fontSize: "0.5em", marginLeft: 10 }}>
                 {signupForm.errors.name}
               </span>
               <input
@@ -103,7 +103,7 @@ const Signup = () => {
               />
 
               <label htmlFor="">Email Address</label>
-              <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+              <span style={{ color: "red", fontSize: "0.5em", marginLeft: 10 }}>
                 {signupForm.errors.email}
               </span>
               <input
@@ -115,7 +115,7 @@ const Signup = () => {
               />
 
               <label htmlFor="">Password</label>
-              <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+              <span style={{ color: "red", fontSize: "0.5em", marginLeft: 10 }}>
                 {signupForm.errors.password}
               </span>
               <input
@@ -127,7 +127,7 @@ const Signup = () => {
               />
 
               <label htmlFor="">Confirm Password</label>
-              <span style={{ color: "red", fontSize: "0.7em", marginLeft: 10 }}>
+              <span style={{ color: "red", fontSize: "0.5em", marginLeft: 10 }}>
                 {signupForm.errors.password}
               </span>
               <input

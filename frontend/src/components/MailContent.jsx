@@ -91,21 +91,37 @@ const MailContent = () => {
                                         value={mailObject.mailBody}  >
                                     </textarea>
                                 </div>
+                                {/* const [attachment, setAttachment] = useState(null); */}
                                 <div className="fw-bold form-group mb-3">
                                     <label>Attachment</label>
+                                    <input
+                                        type="file"
+                                        className="bg-light form-control"
+                                        onChange={(e) => setAttachment(e.target.files[0])}
+                                    />
+                                </div>
+                                <div className="form-group mb-3">
+                                    <button onClick={trigger} type="submit" className="btn fw-bold btn-primary">
+                                        Send
+                                    </button>
+                                </div>
+                                     {/* <label>Attachment</label>
                                     <input type="file" className="bg-light form-control" />
                                 </div>
                                 <div className="form-group mb-3">
                                     <button onClick={trigger} type="submit" className="btn fw-bold btn-primary">Send</button>
-                                </div>
-                            {/* </form> */}
+                                </div>  */}
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
-}
+        </div>            
+                );
+      }
+
+  
+
 
 export default MailContent;
