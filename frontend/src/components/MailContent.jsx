@@ -5,6 +5,7 @@ const MailContent = () => {
         return {
             subject: '',
             mailBody: '',
+            attachment: ''
         }
     }
 
@@ -33,7 +34,13 @@ const MailContent = () => {
                     from: 'plugingenerator96@gmail.com',
                     to: mailId,
                     subject,
-                    html: content
+                    html: content,
+                    attachments: [
+                        {
+                            filename: mailObject.attachment,
+                            content: 'Some notes about this e-mail',
+                            contentType: 'text/plain' // optional, would be detected from the filename
+                        }]
                 }),
                 headers: {
                     'Content-Type' : 'application/json'
@@ -49,7 +56,7 @@ const MailContent = () => {
 
     const onChange = (e) => {
         const { target } = e;
-        const { name, value } = target;
+        const { name, value, files, readFile } = target;
         setMailObject((ps) => {
             return {
                 ...ps,
@@ -58,6 +65,11 @@ const MailContent = () => {
         })
 
     }
+    // const onUploadFile = (e) =>{
+    //     const { }
+    //     console.log(filepath);
+    //     setAttachment(e.target.files[0])
+    // }
   return (
     <div className='bg-light' style={{height:'100vh', width:'100%'}}>
         <div className="container mt-5">
@@ -95,9 +107,11 @@ const MailContent = () => {
                                 <div className="fw-bold form-group mb-3">
                                     <label>Attachment</label>
                                     <input
+                                        name="attachment"
                                         type="file"
                                         className="bg-light form-control"
-                                        onChange={(e) => setAttachment(e.target.files[0])}
+                                        // onChange={(e) => setAttachment(e.target.files[0])}
+                                        onChange={onChange}
                                     />
                                 </div>
                                 <div className="form-group mb-3">

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Newsletter from './components/NewsLetter';
+import Newsletter from './components/Newsletter';
 import { UserProvider } from './UserContext';
 import ManageSubscriber from './components/ManageSubscriber';
 import MailContent from './components/MailContent';
