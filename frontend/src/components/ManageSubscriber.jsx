@@ -22,7 +22,7 @@ const ManageSubscriber = () => {
     return userList.length;
   }
   
-  console.log(id);
+  // console.log(id);
   const deleteUser = async (id) => {
     const res = await fetch('http://localhost:5000/user/delete/'+id, { method : 'DELETE' });
     console.log(res.status);
