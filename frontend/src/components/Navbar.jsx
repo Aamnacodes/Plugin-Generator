@@ -50,9 +50,7 @@ const Navbar = () => {
         </>
       );
     }
-  };
-     
-     
+  };     
    return (
     <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor:'#053B50'}}>
   <div className="container-fluid">
@@ -97,13 +95,10 @@ const Navbar = () => {
         <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
           {showLoginOptions()}
       </ul>
-      
           </div>
         </div>
       </nav>
 
   )
 }
-  
-
 export default Navbar;
