@@ -28,7 +28,9 @@ const ManageSubscriber = () => {
     const data = await res.json();
     if(res.status === 200){
       fetchUserData();
+      if (data){
       toast.success(data.name +' Deleted Successfully ❗')
+      }
       setUserList(userList.filter(user => user._id !== id));
     }
   }
