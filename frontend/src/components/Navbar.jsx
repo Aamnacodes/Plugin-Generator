@@ -84,6 +84,11 @@ const Navbar = () => {
             Newsletter
           </NavLink>
        </li>
+        <li className="nav-item">
+            <NavLink className="px-3 nav-link text-light" to="/docs">
+              Docs
+            </NavLink>
+       </li>
           </ul>
           </div>
         <div>

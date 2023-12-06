@@ -11,6 +11,7 @@ import ManageSubscriber from './components/ManageSubscriber';
 import MailContent from './components/MailContent';
 import Plugin from './components/Plugin';
 import UserAuth from './components/UserAuth';
+import Docs from './components/Docs';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Route element={ <MailContent/>} path='content'/>
           <Route element={ <Plugin/>} path='plugin'/>
           <Route element={ <UserAuth>  </UserAuth> } path="Profile" />
+          <Route element={ <Docs/> } path="Docs" />
 
         </Routes>
       </UserProvider>
