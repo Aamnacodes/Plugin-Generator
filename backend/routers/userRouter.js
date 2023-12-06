@@ -59,20 +59,6 @@ router.get('/getbyid/:id', (req, res) => {
 
 });
 
-router.delete('/mail/unsubscribe/:mailId', async (req, res) => {
-    try {
-      const user = await Model.findByIdAndDelete(req.params.mailId);
-  
-      if (!user) {
-        return res.status(404).send({ error: 'User not found' });
-      }
-  
-      res.send({ message: 'Unsubscribed successfully' });
-    } catch (error) {
-      res.status(500).send({ error: error.toString() });
-    }
-  });
-
 router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
         .then((result) => {
