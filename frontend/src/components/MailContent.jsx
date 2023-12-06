@@ -45,7 +45,7 @@ const MailContent = () => {
                     subject,
                     html: content,
                     fileName: mailObject.fileName,
-                    text: `Your email body. To unsubscribe, click here: ${unsubscribeLink}`
+                    text: ` To unsubscribe, click here: ${unsubscribeLink}`
                 }),
                 headers: {
                     'Content-Type' : 'application/json'
