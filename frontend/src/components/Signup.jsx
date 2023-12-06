@@ -83,7 +83,7 @@ const Signup = () => {
       exit={{ opacity: 0, x: "-100%" }}
       transition={{ duration: 0.3, type: "spring", stiffness: 50, damping: 10 }}
     >
-      <div className="w-30" style={{marginTop:'60px'}}>
+      <div className="w-30" style={{marginTop:'80px'}}>
         <div className="card bg-card">
           <div className="card-body">
             <h3 className=" fw-bolder text-center">Signup Form</h3>

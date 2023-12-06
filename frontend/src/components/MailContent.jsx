@@ -50,6 +50,12 @@ const MailContent = () => {
         })
     }
 
+    const unsubscribe = (mailId) => {
+        // Implement your unsubscribe logic here
+        console.log('Unsubscribed: ' + mailId);
+    }
+
+
     const trigger = () => {
         sendMail(mailObject.subject, `<h1>Mail Magnet</h1><span>${mailObject.mailBody}</span>`)
     }
@@ -66,10 +72,13 @@ const MailContent = () => {
 
     }
     // const onUploadFile = (e) =>{
+
     //     const { }
     //     console.log(filepath);
     //     setAttachment(e.target.files[0])
-    // }
+    // Add an unsubscribe link to the mail content body
+const mailBodyWithUnsubscribe = `${mailObject.mailBody}<br/><br/><a href="unsubscribe">Unsubscribe</a>`;
+
   return (
     <div className='bg-light' style={{height:'100vh', width:'100%'}}>
         <div className="container mt-5">
