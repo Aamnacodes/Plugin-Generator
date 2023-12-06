@@ -35,6 +35,7 @@ const ManageSubscriber = () => {
       }
       setUserList(userList.filter(user => user._id !== id));
       console.log(userList);
+    
     }
     }
   }
@@ -88,6 +89,6 @@ const ManageSubscriber = () => {
       </div>
     </div>
   );
-}
+  
  
 export default ManageSubscriber;
