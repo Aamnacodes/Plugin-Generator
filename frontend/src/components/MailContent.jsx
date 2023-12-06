@@ -29,7 +29,7 @@ const MailContent = () => {
 
     const sendMail = (subject, content) => {
         subsList.forEach(async (mailId) => {
-            const unsubscribeLink = `http://localhost:5000/mail/unsubscribe/${user._id}`;
+            const unsubscribeLink = `http://localhost:5000/mail/unsubscribe/${mailId}`;
             const mailOptions = {
                 from: 'plugingenerator96@gmail.com',
                 to: mailId,
