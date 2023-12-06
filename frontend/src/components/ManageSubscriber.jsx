@@ -38,7 +38,7 @@ const ManageSubscriber = () => {
     
     }
     }
-  }
+  
 
   useEffect(() => {
     fetchUserData();
@@ -89,6 +89,5 @@ const ManageSubscriber = () => {
       </div>
     </div>
   );
-  
- 
+  }
 export default ManageSubscriber;
