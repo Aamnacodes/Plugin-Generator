@@ -2,6 +2,8 @@ var nodemailer = require('nodemailer');
 const express = require('express');
 const router = express.Router();
 
+const path = require('path');
+
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -10,16 +12,23 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-// var mailOptions = {
-//   from: 'plugingenerator96@gmail.com',
-//   to: 'samanabid8715@gmail.com',
-//   subject: 'Sending Email using Node.js',
-//   text: 'That was easy!'
-// };
-
 router.post('/sendmail', (req, res) => { 
   console.log(req.body);
-  transporter.sendMail(req.body, function(error, info){
+  const { body } = req;
+  console.log('FilePathe: ', `${path.join(__dirname, '../uploads')}/${req.body.fileName}`);
+  const payload = {
+    from: body.from,
+    to: body.to,
+    subject: body.subject,
+    html: body.html,
+    attachments: req.body.fileName !== '' ? [
+      {
+        filename: req.body.fileName,
+        path: `${path.join(__dirname, '../uploads')}/${req.body.fileName}`
+      }] : ''
+    };
+  console.log('payload: ', payload);                  
+  transporter.sendMail(payload, function(error, info){
     if (error) {
       console.log(error);
       res.status(500).json({message : 'some error occured send mail'})

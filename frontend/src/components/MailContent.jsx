@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef  } from 'react'
+import axios from 'axios';
 
 const MailContent = () => {
     const defaultItem = () => {
         return {
             subject: '',
             mailBody: '',
-            attachment: ''
+            attachment: null,
+            fileName: '',
         }
     }
 
@@ -23,11 +25,17 @@ const MailContent = () => {
 
    useEffect(() => {
      fetchUserData();
-   }, [])
-   
+   }, [])   
 
     const sendMail = (subject, content) => {
         subsList.forEach(async (mailId) => {
+            const mailOptions = {
+                from: 'plugingenerator96@gmail.com',
+                to: mailId,
+                subject,
+                html: content,
+                fileName: mailObject.fileName
+            }
             const res = await fetch('http://localhost:5000/mail/sendmail', {
                 method: 'POST',
                 body : JSON.stringify({
@@ -35,12 +43,7 @@ const MailContent = () => {
                     to: mailId,
                     subject,
                     html: content,
-                    attachments: [
-                        {
-                            filename: mailObject.attachment,
-                            content: 'Some notes about this e-mail',
-                            contentType: 'text/plain' // optional, would be detected from the filename
-                        }]
+                    fileName: mailObject.fileName
                 }),
                 headers: {
                     'Content-Type' : 'application/json'
@@ -56,7 +59,7 @@ const MailContent = () => {
 
     const onChange = (e) => {
         const { target } = e;
-        const { name, value, files, readFile } = target;
+        const { name, value } = target;
         setMailObject((ps) => {
             return {
                 ...ps,
@@ -65,11 +68,25 @@ const MailContent = () => {
         })
 
     }
-    // const onUploadFile = (e) =>{
-    //     const { }
-    //     console.log(filepath);
-    //     setAttachment(e.target.files[0])
-    // }
+
+    const onFileUpload = (event) => {
+        const formData = new FormData();
+        formData.append("myFile", event.target.files[0]);
+    
+        console.log(event.target.files[0]);
+        axios.post("http://localhost:5000/util/uploadfile", formData, {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        }); //I need to change this line
+        setMailObject((ps) => {
+            return {
+                ...ps,
+                attachment: event.target.files[0],
+                fileName: event.target.files[0].name
+            };
+        })
+    };
   return (
     <div className='bg-light' style={{height:'100vh', width:'100%'}}>
         <div className="container mt-5">
@@ -103,15 +120,13 @@ const MailContent = () => {
                                         value={mailObject.mailBody}  >
                                     </textarea>
                                 </div>
-                                {/* const [attachment, setAttachment] = useState(null); */}
                                 <div className="fw-bold form-group mb-3">
                                     <label>Attachment</label>
                                     <input
                                         name="attachment"
                                         type="file"
                                         className="bg-light form-control"
-                                        // onChange={(e) => setAttachment(e.target.files[0])}
-                                        onChange={onChange}
+                                        onChange={onFileUpload}
                                     />
                                 </div>
                                 <div className="form-group mb-3">
@@ -134,8 +149,5 @@ const MailContent = () => {
         </div>            
                 );
       }
-
-  
-
 
 export default MailContent;
