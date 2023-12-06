@@ -29,12 +29,13 @@ const ManageSubscriber = () => {
     const data = await res.json();
     console.log(data);
     if(res.status === 200){
-      fetchUserData();
+      
+      setUserList(userList.filter(user => user._id !== id));
+      console.log(userList);
       if (data){
       toast.success(data.name +' Deleted Successfully ❗')
       }
-      setUserList(userList.filter(user => user._id !== id));
-      console.log(userList);
+      fetchUserData();
     
     }
     }
