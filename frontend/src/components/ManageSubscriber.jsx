@@ -16,7 +16,7 @@ const ManageSubscriber = () => {
     const data = await res.json();
     console.log('data:', data);
     setUserList(data);
-  }
+  };
 
   const countSubscribers = () => {
     return userList.length;
@@ -61,7 +61,7 @@ const ManageSubscriber = () => {
           <tbody>
             {
               userList.length > 0 ?
-              (userList?.map( (user) => ( <tr>
+              (userList.map( (user) => ( <tr>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
