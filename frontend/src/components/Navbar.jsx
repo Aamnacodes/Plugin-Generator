@@ -28,6 +28,13 @@ const Navbar = () => {
             </NavLink>
           </li>
 
+           
+        <li className="nav-item">
+            <NavLink className="px-3 nav-link text-light" to="/docs">
+              Docs
+            </NavLink>
+       </li>
+
           <li className="px-2 nav-item">
             <button className="btn btn-light fw-bold" onClick={logout} >Logout</button>
           </li>
@@ -47,12 +54,7 @@ const Navbar = () => {
               Login
             </NavLink>
           </li>
-          
-        <li className="nav-item">
-            <NavLink className="px-3 nav-link text-light" to="/docs">
-              Docs
-            </NavLink>
-       </li>
+         
         </>
       );
     }
