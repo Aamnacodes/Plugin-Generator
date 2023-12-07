@@ -29,9 +29,9 @@ const ManageSubscriber = () => {
     const data = await res.json();
     console.log(data);
     if(res.status === 200){
-      
-      setUserList(prevUserList => prevUserList.filter(user => user._id !== id));
-      // setUserList(userList.filter(user => user._id !== id));
+
+      // setUserList(prevUserList => prevUserList.filter(user => user._id !== id));
+      setUserList(userList.filter(user => user._id !== id));
       console.log(userList);
       if (data){
       toast.success(data.name +' Deleted Successfully ❗')
@@ -44,7 +44,7 @@ const ManageSubscriber = () => {
 
   useEffect(() => {
     fetchUserData();
-  }, [userList]); 
+  }, []); 
 
   const displayUserData = () => {
     return (
