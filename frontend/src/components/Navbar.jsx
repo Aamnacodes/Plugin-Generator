@@ -47,6 +47,12 @@ const Navbar = () => {
               Login
             </NavLink>
           </li>
+          
+        <li className="nav-item">
+            <NavLink className="px-3 nav-link text-light" to="/docs">
+              Docs
+            </NavLink>
+       </li>
         </>
       );
     }
@@ -83,11 +89,6 @@ const Navbar = () => {
           <NavLink className="px-3 nav-link text-light" to="/newsletter">
             Newsletter
           </NavLink>
-       </li>
-        <li className="nav-item">
-            <NavLink className="px-3 nav-link text-light" to="/docs">
-              Docs
-            </NavLink>
        </li>
           </ul>
           </div>
