@@ -59,15 +59,33 @@ router.get('/getbyowner/:id', (req, res) => {
 
 });
 
-router.delete('/delete/:id', (req, res) => {
-    Model.findByIdAndDelete(req.params.id)
-        .then((result) => {
-            res.json(result);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// router.delete('/delete/:id', (req, res) => {
+//     Model.findByIdAndDelete(req.params.id)
+//         .then((result) => {
+//             res.json(result);
+//         }).catch((err) => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+
+const deleteUser = async (id) => {
+    const res = await fetch("http://localhost:5000/subscriber/delete/"+id, { method : 'DELETE'});
+    console.log(res.status);
+    console.log(res)
+    const data = await res.json();
+    console.log(data);
+    if(res.status === 200){
+
+      // setUserList(prevUserList => prevUserList.filter(user => user._id !== id));
+      setUserList(userList.filter(user => user._id !== id));
+      console.log(userList);
+      if (data){
+      toast.success(data.name +' Deleted Successfully ❗')
+      }
+      fetchUserData();
+         }
+    };
 
 router.get('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body, { new: true })

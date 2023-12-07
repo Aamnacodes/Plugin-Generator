@@ -24,8 +24,6 @@ const Docs = () => {
             });
     };
 
-
-
     return (
         <div style={{ padding: '75px' ,background: "linear-gradient(to bottom, #7d8c9248, #7b89b0)",height:"100vh"}}>
             <h1 style={{padding :'25px', textAlign:'center'}}>Get Started with Our Newsletter Plugin Generator</h1>

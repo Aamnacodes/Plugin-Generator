@@ -24,7 +24,7 @@ const ManageSubscriber = () => {
   
   // console.log(id);
   const deleteUser = async (id) => {
-    const res = await fetch('http://localhost:5000/user/delete/'+id, { method : 'DELETE' });
+    const res = await fetch('http://localhost:5000/user/delete/'+id, { method : 'DELETE', headers: { 'Content-Type': 'application/json'} });
     console.log(res.status);
     const data = await res.json();
     console.log(data);
