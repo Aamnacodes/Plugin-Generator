@@ -59,6 +59,20 @@ router.get('/getbyowner/:id', (req, res) => {
 
 });
 
+router.delete('/unsubscribe/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({ message: 'User not found' });
+        }
+  
+        res.status(200).json({ message: 'Unsubscribed successfully' });
+      })
+      .catch(error => {
+        res.status(500).json({ message: error.message });
+      });
+  });
+
 router.delete('/delete/:id', (req, res) => {
     console.log(req.params.id);
     Model.findByIdAndDelete(req.params.id)

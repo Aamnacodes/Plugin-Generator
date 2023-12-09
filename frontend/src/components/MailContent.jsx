@@ -28,29 +28,15 @@ const MailContent = () => {
      fetchUserData();
    }, [])   
 
-   const deleteUser = async (id) => {
-    const res = await fetch('http://localhost:5000/subscriber/delete/'+id, { method : 'DELETE', headers: { 'Content-Type': 'application/json'} });
-    console.log(res.status);
-    const data = await res.json();
-    console.log(data);
-    if(res.status === 200){
-      setUserList(subsList.filter(user => user._id !== id));
-      console.log(subsList);
-      if (data){
-      toast.success(data.name +' Deleted Successfully ❗')
-      }
-      fetchUserData();
-    
-    }
-    }
-
     const sendMail = (subject, content) => {
         subsList.forEach(async (mailId) => {
+            const unsubscribeLink = `http://localhost:5000/subscriber/unsubscribe/${mailId}`;
             const mailOptions = {
                 from: 'plugingenerator96@gmail.com',
                 to: mailId,
                 subject,
                 html: content,
+                text:`To unsubscribe, click here: ${unsubscribeLink}`,
                 fileName: mailObject.fileName
             }
             const res = await fetch('http://localhost:5000/mail/sendmail', {
@@ -60,7 +46,6 @@ const MailContent = () => {
                     to: mailId,
                     subject,
                     html: content,
-                    text: 'To unscubscribe click here' + <button onClick={ () => { deleteUser(user._id) } } className='btn btn-danger'>Delete</button> ,
                     fileName: mailObject.fileName,
                 }),
                 headers: {
