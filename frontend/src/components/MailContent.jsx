@@ -50,13 +50,13 @@ const MailContent = () => {
                     'Content-Type' : 'application/json'
                 }
             });
-            
+
             if(res.status === 201) {
             console.log('mail sent to '+mailId);
             Swal.fire({
                 icon: 'success',
                 title: 'Mail Sent',
-                text: 'Mail sent to '+mailId
+                text: 'Mail sent Succesfully!✔️'
             });
             } else {
                 console.log('mail not sent to '+mailId);
