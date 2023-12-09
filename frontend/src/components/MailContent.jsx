@@ -51,23 +51,15 @@ const MailContent = () => {
                 }
             });
 
-            if(res.status === 201) {
+            if(res.status === 201) 
             console.log('mail sent to '+mailId);
-            Swal.fire({
-                icon: 'success',
-                title: 'Mail Sent',
-                text: 'Mail sent Succesfully to all Subscribers!✉️'
-            });
-            } else {
-                console.log('mail not sent to '+mailId);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Mail not sent to '+mailId
-                });
-            }
-
         })
+        
+        Swal.fire({
+            icon: 'success',
+            title: 'Mail Sent',
+            text: 'Mail sent Succesfully to all Subscribers!✉️'
+        });
     }
 
     const unsubscribe = (mailId) => {
