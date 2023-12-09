@@ -56,7 +56,7 @@ const MailContent = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Mail Sent',
-                text: 'Mail sent Succesfully!✔️'
+                text: 'Mail sent Succesfully to all Subscribers!✉️'
             });
             } else {
                 console.log('mail not sent to '+mailId);
