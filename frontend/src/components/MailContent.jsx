@@ -30,13 +30,13 @@ const MailContent = () => {
 
     const sendMail = (subject, content) => {
         subsList.forEach(async (mailId) => {
-            const unsubscribeLink = `http://localhost:5000/subscriber/unsubscribe/${mailId}`;
+            const unsubscribeLink = `http://localhost:5000/subscriber/unsubscribe/${currentUser?._id}`;
             const mailOptions = {
                 from: 'plugingenerator96@gmail.com',
                 to: mailId,
                 subject,
-                html: content,
-                text:`To unsubscribe, click here: ${unsubscribeLink}`,
+                html: `${content}<br/><br/><a href="${unsubscribeLink}">Unsubscribe</a>`,
+                text: `To unsubscribe, click here: ${unsubscribeLink}`,
                 fileName: mailObject.fileName
             }
             const res = await fetch('http://localhost:5000/mail/sendmail', {
@@ -45,13 +45,15 @@ const MailContent = () => {
                     from: 'plugingenerator96@gmail.com',
                     to: mailId,
                     subject,
-                    html: content,
+                    html: `${content}<br/><br/><a href="${unsubscribeLink}">Unsubscribe</a>`,
                     fileName: mailObject.fileName,
                 }),
                 headers: {
                     'Content-Type' : 'application/json'
                 }
             });
+
+            fetchUserData();
 
             if(res.status === 201) 
             console.log('mail sent to '+mailId);
