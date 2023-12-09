@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef  } from 'react'
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const MailContent = () => {
     const defaultItem = () => {
@@ -49,7 +50,23 @@ const MailContent = () => {
                     'Content-Type' : 'application/json'
                 }
             });
-            if(res.status === 201) console.log('mail sent to '+mailId);
+            
+            if(res.status === 201) {
+            console.log('mail sent to '+mailId);
+            Swal.fire({
+                icon: 'success',
+                title: 'Mail Sent',
+                text: 'Mail sent to '+mailId
+            });
+            } else {
+                console.log('mail not sent to '+mailId);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Mail not sent to '+mailId
+                });
+            }
+
         })
     }
 
