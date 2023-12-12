@@ -35,7 +35,7 @@ const MailContent = () => {
                 from: 'plugingenerator96@gmail.com',
                 to: mailId,
                 subject,
-                html: `${content}<br/><br/><a href="${unsubscribeLink}">Unsubscribe</a>`,
+                html:content,
                 // text: `To unsubscribe, click here: ${unsubscribeLink}`,
                 fileName: mailObject.fileName
             }
