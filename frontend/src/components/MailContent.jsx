@@ -36,7 +36,7 @@ const MailContent = () => {
                 to: mailId,
                 subject,
                 html: `${content}<br/><br/><a href="${unsubscribeLink}">Unsubscribe</a>`,
-                text: `To unsubscribe, click here: ${unsubscribeLink}`,
+                // text: `To unsubscribe, click here: ${unsubscribeLink}`,
                 fileName: mailObject.fileName
             }
             const res = await fetch('http://localhost:5000/mail/sendmail', {
